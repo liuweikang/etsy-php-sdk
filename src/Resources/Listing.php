@@ -31,7 +31,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/updateListing
    * @param array $data
-   * @return Etsy\Resources\Listing
+   * @return \Etsy\Resources\Listing
    */
   public function update(array $data) {
     return $this->updateRequest(
@@ -57,7 +57,7 @@ class Listing extends Resource {
    * Get the listing properties associated with the listing.
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingProperties
-   * @return Etsy\Collection[Etsy\Resources\ListingProperty]
+   * @return \Etsy\Collection[Etsy\Resources\ListingProperty]
    */
   public function getListingProperties() {
     return $this->request(
@@ -77,7 +77,7 @@ class Listing extends Resource {
    * @NOTE This method is not ready for use and will return a 501 repsonse.
    * @link https://developers.etsy.com/documentation/reference#operation/getListingProperty
    * @param integer|string $property_id
-   * @return Etsy\Resources\ListingProperty
+   * @return \Etsy\Resources\ListingProperty
    */
   public function getListingProperty($property_id) {
     $listing_property = $this->request(
@@ -96,7 +96,7 @@ class Listing extends Resource {
    * Get the listing files associated with the listing.
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getAllListingFiles
-   * @return Etsy\Collection[Etsy\Resources\ListingFile]
+   * @return \Etsy\Collection[Etsy\Resources\ListingFile]
    */
   public function getFiles() {
     return $this->request(
@@ -112,7 +112,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingFile
    * @param integer|string $listing_file_id
-   * @return Etsy\Resources\ListingFile
+   * @return \Etsy\Resources\ListingFile
    */
   public function getFile($listing_file_id) {
     $listing_file = $this->request(
@@ -131,7 +131,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/uploadListingFile
    * @param array $data
-   * @return Etsy\Resources\ListingFile
+   * @return \Etsy\Resources\ListingFile
    */
   public function uploadFile(array $data) {
     if(!isset($data['image']) && !isset($data['listing_image_id'])) {
@@ -153,7 +153,7 @@ class Listing extends Resource {
    * Get the Listing Images for the listing.
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingImages
-   * @return Etsy\Collection[Etsy\Resources\ListingImage]
+   * @return \Etsy\Collection[Etsy\Resources\ListingImage]
    */
   public function getImages() {
     return $this->request(
@@ -169,7 +169,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingImage
    * @param integer|string $listing_image_id
-   * @return Etsy\Resources\ListingImage
+   * @return \Etsy\Resources\ListingImage
    */
   public function getImage($listing_image_id) {
     $listing_image = $this->request(
@@ -188,7 +188,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/uploadListingImage
    * @param array $data
-   * @return Etsy\Resources\ListingImage
+   * @return \Etsy\Resources\ListingImage
    */
   public function uploadImage(array $data) {
     if(!isset($data['image']) && !isset($data['listing_image_id'])) {
@@ -210,7 +210,7 @@ class Listing extends Resource {
    * Get the Listing Videos for the listing.
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingVideos
-   * @return Etsy\Collection[Etsy\Resources\ListingVideo]
+   * @return \Etsy\Collection[Etsy\Resources\ListingVideo]
    */
   public function getVideos() {
     return $this->request(
@@ -226,7 +226,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingVideo
    * @param integer|string $listing_video_id
-   * @return Etsy\Resources\ListingVideo
+   * @return \Etsy\Resources\ListingVideo
    */
   public function getVideo($listing_video_id) {
     $listing_video = $this->request(
@@ -245,7 +245,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/uploadListingVideo
    * @param array $data
-   * @return Etsy\Resources\ListingVideo
+   * @return \Etsy\Resources\ListingVideo
    */
   public function uploadVideo(array $data) {
     if(!isset($data['video']) && !isset($data['video_id'])) {
@@ -267,7 +267,7 @@ class Listing extends Resource {
    * Get the inventory for the listing.
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingInventory
-   * @return Etsy\Resources\ListingInventory
+   * @return \Etsy\Resources\ListingInventory
    */
   public function getInventory() {
     $inventory = $this->request(
@@ -290,7 +290,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/updateListingInventory
    * @param array $data
-   * @return Etsy\Resources\ListingInventory
+   * @return \Etsy\Resources\ListingInventory
    */
   public function updateInventory(array $data) {
     $inventory = $this->request(
@@ -315,7 +315,7 @@ class Listing extends Resource {
    * @link https://developers.etsy.com/documentation/reference#tag/ShopListing-Offering
    * @param integer|string $product_id
    * @param integer|string $product_offering_id
-   * @return Etsy\Resources\ListingOffering
+   * @return \Etsy\Resources\ListingOffering
    */
   public function getOffering($product_id, $product_offering_id) {
     $offering = $this->request(
@@ -335,7 +335,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#tag/ShopListing-Product
    * @param integer|string $product_id
-   * @return Etsy\Resources\ListingProduct
+   * @return \Etsy\Resources\ListingProduct
    */
   public function getProduct($product_id) {
     $product = $this->request(
@@ -354,7 +354,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingTranslation
    * @param string $language
-   * @return Etsy\Resources\ListingTranslation
+   * @return \Etsy\Resources\ListingTranslation
    */
   public function getTranslation(
     string $language
@@ -376,7 +376,7 @@ class Listing extends Resource {
    * @link https://developers.etsy.com/documentation/reference#operation/createListingTranslation
    * @param string $language
    * @param array $data
-   * @return Etsy\Resources\ListingTranslation
+   * @return \Etsy\Resources\ListingTranslation
    */
   public function createTranslation(
     string $language,
@@ -398,7 +398,7 @@ class Listing extends Resource {
    * Gets variation images for the listing.
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingVariationImages
-   * @return Etsy\Collection[Etsy\Resources\ListingVariationImage]
+   * @return \Etsy\Collection[Etsy\Resources\ListingVariationImage]
    */
   public function getVariationImages() {
     return $this->request(
@@ -413,7 +413,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/updateVariationImages
    * @param array $data
-   * @return Etsy\Collection[Etsy\Resources\ListingVariationImage]
+   * @return \Etsy\Collection[Etsy\Resources\ListingVariationImage]
    */
   public function updateVariationImages(array $data) {
     return $this->request(
@@ -428,7 +428,7 @@ class Listing extends Resource {
    * Get all reviews for the listing.
    *
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Review]
+   * @return \Etsy\Collection[Etsy\Resources\Review]
    */
   public function getReviews(array $params = []) {
     return $this->request(
@@ -444,7 +444,7 @@ class Listing extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getShopReceiptTransactionsByListing
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Transaction]
+   * @return \Etsy\Collection[Etsy\Resources\Transaction]
    */
   public function getTransactions(array $params = []) {
     return $this->request(

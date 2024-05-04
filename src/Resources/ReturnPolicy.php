@@ -17,7 +17,7 @@ class ReturnPolicy extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/updateShopReturnPolicy
    * @param array $data
-   * @return Etsy\Resources\ReturnPolicy
+   * @return \Etsy\Resources\ReturnPolicy
    */
   public function update(array $data) {
     return $this->updateRequest(
@@ -45,7 +45,7 @@ class ReturnPolicy extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingsByShopReturnPolicy
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Listing]
+   * @return \Etsy\Collection[Etsy\Resources\Listing]
    */
   public function getListings() {
     return $this->request(

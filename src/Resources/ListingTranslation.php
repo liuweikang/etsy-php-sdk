@@ -17,7 +17,7 @@ class ListingTranslation extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/updateListingTranslation
    * @param array $data
-   * @return Etsy\Resources\ListingTranslation
+   * @return \Etsy\Resources\ListingTranslation
    */
   public function update(array $data) {
     return $this->updateRequest(

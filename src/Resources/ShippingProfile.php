@@ -25,7 +25,7 @@ class ShippingProfile extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference/#operation/updateShopShippingProfile
    * @param array $data
-   * @return Etsy\Resources\ShippingProfile
+   * @return \Etsy\Resources\ShippingProfile
    */
   public function update(array $data) {
     return $this->updateRequest(
@@ -51,7 +51,7 @@ class ShippingProfile extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/createShopShippingProfileDestination
    * @param array $data
-   * @return Etsy\Resources\ShippingDestination
+   * @return \Etsy\Resources\ShippingDestination
    */
   public function createShippingDestination($data) {
     $destination =  $this->request(
@@ -72,7 +72,7 @@ class ShippingProfile extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/createShopShippingProfileUpgrade
    * @param array $data
-   * @return Etsy\Resources\ShippingUpgrade
+   * @return \Etsy\Resources\ShippingUpgrade
    */
   public function createShippingUpgrade($data) {
     $upgrade =  $this->request(

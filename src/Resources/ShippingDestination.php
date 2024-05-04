@@ -17,7 +17,7 @@ class ShippingDestination extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/updateShopShippingProfileDestination
    * @param array $data
-   * @return Etsy\Resources\ShippingDestination
+   * @return \Etsy\Resources\ShippingDestination
    */
   public function update(array $data) {
     return $this->updateRequest(

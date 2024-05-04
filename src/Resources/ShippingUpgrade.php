@@ -17,7 +17,7 @@ class ShippingUpgrade extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/updateShopShippingProfileUpgrade
    * @param array $data
-   * @return Etsy\Resources\ShippingUpgrade
+   * @return \Etsy\Resources\ShippingUpgrade
    */
   public function update(array $data) {
     return $this->updateRequest(

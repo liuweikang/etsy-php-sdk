@@ -17,7 +17,7 @@ class ShopSection extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingsByShopSectionId
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Listing]
+   * @return \Etsy\Collection[Etsy\Resources\Listing]
    */
   public function getListings($params = []) {
     $params['shop_section_ids'] = [$this->shop_section_id];

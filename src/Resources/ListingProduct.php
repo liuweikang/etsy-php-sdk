@@ -24,7 +24,7 @@ class ListingProduct extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingOffering
    * @param integer|string $product_offering_id
-   * @return Etsy\Resources\ListingOffering
+   * @return \Etsy\Resources\ListingOffering
    */
   public function getOffering($product_offering_id) {
     return $this->request(

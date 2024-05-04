@@ -17,7 +17,7 @@ class ListingProperty extends Resource {
    *
    * https://developers.etsy.com/documentation/reference#operation/updateListingProperty
    * @param array $data
-   * @return Etsy\Resources\ListingProperty
+   * @return \Etsy\Resources\ListingProperty
    */
   public function update(array $data) {
     return $this->updateRequest(

@@ -24,7 +24,7 @@ class Receipt extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/createReceiptShipment
    * @param array $data
-   * @return Etsy\Resources\Shipment
+   * @return \Etsy\Resources\Shipment
    */
   public function createShipment(array $data) {
     $shipment = $this->request(
@@ -42,7 +42,7 @@ class Receipt extends Resource {
    * Gets all transactions for the receipt.
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getShopReceiptTransactionsByReceipt
-   * @return Etsy\Collection[Etsy\Resources\Transaction]
+   * @return \Etsy\Collection[Etsy\Resources\Transaction]
    */
   public function getTransactions() {
     return $this->request(
@@ -56,7 +56,7 @@ class Receipt extends Resource {
    * Gets all payments for the receipt.
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getShopPaymentByReceiptId
-   * @return Etsy\Collection[Etsy\Resources\Payment]
+   * @return \Etsy\Collection[Etsy\Resources\Payment]
    */
   public function getPayments() {
     return $this->request(
@@ -71,7 +71,7 @@ class Receipt extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingsByShopReceipt
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Listing]
+   * @return \Etsy\Collection[Etsy\Resources\Listing]
    */
   public function getListings($params = []) {
     return $this->request(

@@ -17,7 +17,7 @@ class Shop extends Resource {
    * Update the shop.
    *
    * @param array $data
-   * @return Etsy\Resources\Shop
+   * @return \Etsy\Resources\Shop
    */
   public function update(array $data) {
     return $this->updateRequest(
@@ -97,7 +97,7 @@ class Shop extends Resource {
    * Get all reviews for the shop.
    *
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Review]
+   * @return \Etsy\Collection[Etsy\Resources\Review]
    */
   public function getReviews(array $params = []) {
     return $this->request(
@@ -111,7 +111,7 @@ class Shop extends Resource {
   /**
    * Get all shipping profiles for the shop.
    *
-   * @return Etsy\Collection[Etsy\Resources\ShippingProfile]
+   * @return \Etsy\Collection[Etsy\Resources\ShippingProfile]
    */
   public function getShippingProfiles() {
     $profiles = $this->request(
@@ -134,7 +134,7 @@ class Shop extends Resource {
    * Gets a single shipping profile for the shop.
    *
    * @param integer|string $shipping_profile_id
-   * @return Etsy\Collection[Etsy\Resources\ShippingProfile]
+   * @return \Etsy\Collection[Etsy\Resources\ShippingProfile]
    */
   public function getShippingProfile($shipping_profile_id) {
     $profile = $this->request(
@@ -152,7 +152,7 @@ class Shop extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference/#operation/createShopShippingProfile
    * @param array $data
-   * @return Etsy\Collection[Etsy\Resources\ShippingProfile]
+   * @return \Etsy\Collection[Etsy\Resources\ShippingProfile]
    */
   public function createShippingProfile(array $data) {
     $profile = $this->request(
@@ -169,7 +169,7 @@ class Shop extends Resource {
   /**
    * Get all return policies for the shop.
    *
-   * @return Etsy\Collection[Etsy\Resources\ReturnPolicy]
+   * @return \Etsy\Collection[Etsy\Resources\ReturnPolicy]
    */
   public function getReturnPolicies() {
     $policies = $this->request(
@@ -184,7 +184,7 @@ class Shop extends Resource {
    * Gets a single shipping profile for the shop.
    *
    * @param integer $policy_id
-   * @return Etsy\Resources\ReturnPolicy
+   * @return \Etsy\Resources\ReturnPolicy
    */
   public function getReturnPolicy($policy_id) {
     $policy = $this->request(
@@ -200,7 +200,7 @@ class Shop extends Resource {
    *
    * @param integer $source_policy_id
    * @param integer $destination_policy_id
-   * @return Etsy\Resources\ReturnPolicy
+   * @return \Etsy\Resources\ReturnPolicy
    */
   public function consolidateReturnPolicies(int $source_policy_id, int $destination_policy_id) {
     $data = [
@@ -218,7 +218,7 @@ class Shop extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/createShopReturnPolicy
    * @param array $data
-   * @return Etsy\Resources\ReturnPolicy
+   * @return \Etsy\Resources\ReturnPolicy
    */
   public function createReturnPolicy(array $data) {
     $policy = $this->request(
@@ -258,7 +258,7 @@ class Shop extends Resource {
    * Get all receipts for the shop.
    *
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Receipt]
+   * @return \Etsy\Collection[Etsy\Resources\Receipt]
    */
   public function getReceipts(array $params = []) {
     return $this->request(
@@ -274,7 +274,7 @@ class Shop extends Resource {
    * Gets a single receipt for the shop.
    *
    * @param integer|string $receipt_id
-   * @return Etsy\Resources\Receipt
+   * @return \Etsy\Resources\Receipt
    */
   public function getReceipt($receipt_id) {
     $receipt = $this->request(
@@ -293,7 +293,7 @@ class Shop extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getShopReceiptTransactionsByShop
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Transaction]
+   * @return \Etsy\Collection[Etsy\Resources\Transaction]
    */
   public function getTransactions(array $params = []) {
     return $this->request(
@@ -309,7 +309,7 @@ class Shop extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getShopReceiptTransaction
    * @param integer|string $transaction_id
-   * @return Etsy\Resources\Transaction
+   * @return \Etsy\Resources\Transaction
    */
   public function getTransaction($transaction_id) {
     return $this->request(
@@ -324,7 +324,7 @@ class Shop extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#tag/Ledger-Entry
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\LedgerEntry]
+   * @return \Etsy\Collection[Etsy\Resources\LedgerEntry]
    */
   public function getLedgerEntries(array $params = []) {
     return $this->request(
@@ -341,7 +341,7 @@ class Shop extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getPayments
    * @param array $payment_ids
-   * @return Etsy\Collection[Etsy\Resources\Payment]
+   * @return \Etsy\Collection[Etsy\Resources\Payment]
    */
   public function getPayments(array $payment_ids = []) {
     return $this->request(
@@ -357,7 +357,7 @@ class Shop extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/createDraftListing
    * @param array $data
-   * @return Etsy\Resources\Listing
+   * @return \Etsy\Resources\Listing
    */
   public function createListing(array $data) {
     $listing = $this->request(
@@ -374,7 +374,7 @@ class Shop extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getListingsByShop
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Listing]
+   * @return \Etsy\Collection[Etsy\Resources\Listing]
    */
   public function getListings(array $params = []) {
     $listings = $this->request(
@@ -391,7 +391,7 @@ class Shop extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/findAllActiveListingsByShop
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Listing]
+   * @return \Etsy\Collection[Etsy\Resources\Listing]
    */
   public function getPublicListings(array $params = []) {
     $listings = $this->request(
@@ -408,7 +408,7 @@ class Shop extends Resource {
    *
    * @link https://developers.etsy.com/documentation/reference#operation/getFeaturedListingsByShop
    * @param array $params
-   * @return Etsy\Collection[Etsy\Resources\Listing]
+   * @return \Etsy\Collection[Etsy\Resources\Listing]
    */
   public function getFeaturedListings(array $params = []) {
     $listings = $this->request(

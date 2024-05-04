@@ -63,7 +63,7 @@ class Collection {
   /**
    * Returns only the first result. Primarily used for fetching single resources.
    *
-   * @return Etsy\Resource
+   * @return \Etsy\Resource
    */
   public function first() {
     if(!count($this->data)) {

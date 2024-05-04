@@ -62,10 +62,10 @@ class Client {
   /**
    * Create a new instance of GuzzleHttp Client.
    *
-   * @return GuzzleHttp\Client
+   * @return \GuzzleHttp\Client
    */
   public function createHttpClient() {
-    return new GuzzleHttpClient();
+    return new GuzzleHttpClient($this->config);
   }
 
   /**
