@@ -22,8 +22,8 @@ class Client
 {
 
   const CONNECT_URL = "https://www.etsy.com/oauth/connect";
-  const TOKEN_URL = "https://api.etsy.com/v3/public/oauth/token";
-  const API_URL = "https://api.etsy.com/v3";
+  const TOKEN_URL = "https://openapi.etsy.com/v3/public/oauth/token";
+  const API_URL = "https://openapi.etsy.com/v3";
 
   /**
    * @var string
@@ -281,16 +281,22 @@ class Client
    */
   private function handleAcessTokenError(\Exception $e)
   {
-    $response = $e->getResponse();
-    $body = json_decode($response->getBody(), false);
-    $status_code = $response->getStatusCode();
-    $error_msg = "with error \"{$body->error}\"";
-    if ($body->error_description ?? false) {
-      $error_msg .= "and message \"{$body->error_description}\"";
+    if ($e instanceof BadResponseException) {
+      $response = $e->getResponse();
+      $body = json_decode($response->getBody(), false);
+      $status_code = $response->getStatusCode();
+      $error_msg = "with error \"{$body->error}\"";
+      if ($body->error_description ?? false) {
+        $error_msg .= "and message \"{$body->error_description}\"";
+      }
+      throw new OAuthException(
+        "Received HTTP status code [$status_code] {$error_msg} when requesting access token."
+      );
+    } else {
+      throw new RequestException(
+        "Received HTTP status code [\"{$e->getCode()}\"] with error \"{$e->getMessage()}\"."
+      );
     }
-    throw new OAuthException(
-      "Received HTTP status code [$status_code] {$error_msg} when requesting access token."
-    );
   }
 
   /**
